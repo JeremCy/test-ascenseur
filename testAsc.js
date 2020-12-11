@@ -24,23 +24,15 @@ listCall=[
     new call(10,DOWN)   
 ];
 
-function upAsc(ascFloor){
-  console.log("test");
-}
-function DownAsc(ascFloor){
+function inElevator(lvElevator,test){
 
-  console.log("test");
-
-}
-
-function inElevator(lvElevator){
-const insideCall1= 5;
-const insideCall2= 6;
 
 
 
 }
 function idleCoreAsc(listCall){
+  const insideCall1= 5;
+  const insideCall2= 6;
   const initAsc = new call(0,IDLE);
   if (listCall==null && listCall.length==0) {
       setTimeout(function() { idleCoreAsc(); }, 5000);  
@@ -55,14 +47,14 @@ function idleCoreAsc(listCall){
           initAsc.floors++;
         }
         console.log("Done!\nPickup client.....");
-        inElevator(initAsc.floors);
+        inElevator(initAsc.floors,insideCall1);
       }else if(listCall[i].floors<initAsc.floors){
         while(listCall[i].floors!=initAsc.floors){
           goDown();
             initAsc.floors--;
           }
         console.log("Done!\nPickup client.....")
-        inElevator(initAsc.floors);
+        inElevator(initAsc.floors,insideCall1);
       } 
     }       
   }  
